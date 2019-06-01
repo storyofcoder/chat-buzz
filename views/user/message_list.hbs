@@ -1,0 +1,37 @@
+<html>
+<head>
+    <script src="socket.io/socket.io.js"></script>
+</head>
+<body>
+
+    <div class="all-friends">
+        <div class="head">
+            <div class="title">Messages : </div>
+            <div class="search">
+                <input placeholder="Search Friend here ..">
+                <img src="https://microhealth.com/assets/images/illustrations/personal-user-illustration-@2x.png">
+            </div>
+        </div>
+
+        {{#if error}}
+            <div class="friends">{{error}}</div>
+        {{else}}
+            <div class="friends">
+                {{#each messages}}
+                    <div class="friend" onclick="openchat('{{this.profile}}')">
+                        <img class="img" src="{{ this.image }}">
+                        <div class="details">
+                            <span class="name">{{ this.name }}</span>
+                            <span class="status">Active</span>
+                            <div class="msg"> {{ this.message }} </div>
+                        </div>
+                    </div>
+                {{/each}}
+
+            </div>
+        {{/if}}
+    </div>
+
+    <script src="javascripts/socket.js"></script>
+</body>
+</html>

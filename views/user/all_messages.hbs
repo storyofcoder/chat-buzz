@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src="socket.io/socket.io.js"></script>
+    <style>
+        .opacity{
+            opacity: 0.4 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="current">
+        <div class="header">
+            <img class="img" src="{{profile.imagePath}}">
+            <div class="detail">
+                <div class="name">{{profile.name}}</div>
+                <div class="status">Online</div>
+            </div>
+            <img class="settings" src="https://png.icons8.com/color/260/settings.png">
+        </div>
+
+        <div class="msg-box">
+            <ul class="chat" id="msglist">
+                {{#each messages.messages}}
+                    <li class="chat__bubble {{#if this.user}} chat__bubble--sent {{else}} chat__bubble--rcvd {{/if}} chat__bubble--stop"> {{ this.message }} </li>
+                {{/each}}
+            </ul>
+        </div>
+        <div class="msg-input">
+            <p class="msg_user_id" style="display: none">{{id}}</p>
+            <p class="msg_friend_id" style="display: none">{{messages.friend_id}}</p>
+            <input placeholder="Type your message here.." id="message_box"  required>
+            <img onclick="sendmsg('{{id}}','{{messages.friend_id}}')" class="send opacity" src="https://cdn4.iconfinder.com/data/icons/materia-social-free/24/038_028_share_link_friends_send_android_material-512.png">
+        </div>
+    </div>
+
+    <script src="javascripts/socket.js"></script>
+</body>
+</html>
