@@ -205,6 +205,26 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-server.listen(9999, function () {
+function normalizePort(val) {
+    var port = parseInt(val, 10);
+
+    if (isNaN(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port >= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+
+var port = normalizePort(process.env.PORT || '9999');
+app.set('port', port);
+
+server.listen(port, function () {
     console.log("server run on port no : 9999");
 });
