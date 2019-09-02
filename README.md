@@ -26,4 +26,4 @@ mongoose  </br> passport </br> passport-local </br> socket.io etc...
 ### Description 
 Second project of my life during my degree in March 2018, its my own idea and completed 
 
-``` By: Munny Kumar ```
+``` By: Kirti ```
