@@ -24,7 +24,7 @@ mongoose  </br> passport </br> passport-local </br> socket.io etc...
 ``` npm start ``` or ``` nodemon ```
 
 ## Features
-List of features ready and TODOs for future development
+
 * The project is well planned and designed. 
 * The main feature is UI and logical part.
 
